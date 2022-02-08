@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >Nhập tháng muốn kiểm tra (điền số từ 1 đến 12):</label><br>
+    <input type="number" id="tháng">
+    <button onclick="submit();">Kiểm tra số ngày trong tháng</button>
+    <h3 style="color:rgb(226, 43, 202)" id="s3"></h3>
+</body>
+<script>
+    let day;
+
+    function submit(){
+        let month = document.getElementById("tháng").value;
+        switch(month){
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                day = 30;
+                break;
+            case '2':
+                day = "28 hoặc 29";
+                break;
+            default:
+                day = 31;
+        }
+        document.getElementById('s3').innerHTML = 'Trong tháng này có' + day + 'ngày';
+    }
+</script>
+</html>
